@@ -1,73 +1,80 @@
-# React + TypeScript + Vite
+# 💇 Manicure — Website Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modular website template for small businesses, built with React, TypeScript, Vite, and Tailwind CSS. Part of the **Fábrica de Sites** project — a collection of reusable site blueprints designed for fast client deployment.
 
-Currently, two official plugins are available:
+> 📌 **This is one of three templates in the collection:**
+> - [barbearia-site](https://github.com/ighorsantiago/barbearia-site) — Barbershop template
+> - [manicure-site](https://github.com/ighorsantiago/manicure-site) — Nail salon template
+> - [ploter-site](https://github.com/ighorsantiago/ploter-site) — Print shop template (live case: [Ploter.com](https://ploter.com))
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📱 About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The **Fábrica de Sites** approach uses a **single source of truth configuration pattern** — all client-specific content (business name, colors, contact info, services, opening hours) lives in a single config file. Switching clients requires minimal code changes.
 
-## Expanding the ESLint configuration
+**Key features:**
+- Appointment booking flow
+- Admin dashboard
+- PIX payment module
+- SEO-ready structure
+- Google Search Console integration (Ploter.com case)
+- Continuous deployment via Vercel
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠 Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [React](https://react.dev/) 18 + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vercel](https://vercel.com/) — deploy
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🚀 Getting started
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/ighorsantiago/[repo-name].git
+
+cd [repo-name]
+
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Running locally
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+### Customizing for a new client
+
+All client-specific content is in `src/config/index.ts` (or equivalent config file). Update the following fields:
+
+```typescript
+export const config = {
+  businessName: "Your Business Name",
+  primaryColor: "#your-color",
+  phone: "your-phone",
+  address: "your-address",
+  services: [...],
+  openingHours: {...},
+}
+```
+
+### Deploy
+
+Connect the repository to [Vercel](https://vercel.com) for automatic deployments on every push.
+
+---
+
+## 👤 Author
+
+**Ighor Santiago**
+
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/ighor-santiago/)
+[![GitHub](https://img.shields.io/badge/-GitHub-black?style=flat-square&logo=github)](https://github.com/ighorsantiago)
