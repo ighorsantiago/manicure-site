@@ -1,4 +1,4 @@
-# 💇 Manicure — Website Template
+# 💇 Nail salon — Website Template
 
 A modular website template for small businesses, built with React, TypeScript, Vite, and Tailwind CSS. Part of the **Fábrica de Sites** project — a collection of reusable site blueprints designed for fast client deployment.
 
